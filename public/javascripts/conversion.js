@@ -1,20 +1,3 @@
-
-/*
- * GET home page.
- */
-
-
-exports.index = function(req, res){
-  //res.send('Hello World!');
-  res.render('index', { title: 'TimeStamp Microservice', author: "Ian Agpawa" });
-};
-
-
-
-
-
-
-
 function checkInput(input){
   
   var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
@@ -38,14 +21,6 @@ function checkInput(input){
     return ({ unix: input, natural: naturalDate })
   } else {
     return convertToUnix(input)
-  }            
+  }               
 }
 
-
-
-
-exports.getTime = function(req, res){
-  var userInput = req.params.input
-  var output = checkInput(userInput)
-  res.send(output)
-}

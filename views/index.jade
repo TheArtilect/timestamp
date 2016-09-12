@@ -2,14 +2,15 @@ extends layout
 
 block content
   h1= title
-  h4 by Ian Agpawa
+  h4 by #{author}
   p Welcome to #{title}
   
   h3 Examples:
-  p(id="example-natural", class="example") blah blah blah
-  p(id="example-unix", class="example") blah blah
+  code(id="example-natural", class="example") localhost:8080/December 15, 2015
+  p Or
+  code(id="example-unix", class="example") localhost:8080/1450137600
   
   h3 Example Output:
-  p(id="example-output") blah blah
+  code(id="example-output" class="example") { "unix": 1450137600, "natural": "December 15, 2015" }
   
-  
+  p= input

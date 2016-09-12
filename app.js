@@ -9,6 +9,8 @@ var express = require('express')
   , http = require('http')
   , path = require('path');
 
+
+
 var app = express();
 
 // all environments
@@ -28,6 +30,12 @@ if ('development' == app.get('env')) {
 }
 
 app.get('/', routes.index);
+
+app.get('/:input', routes.getTime )
+
+
+
+
 app.get('/users', user.list);
 
 var server = http.createServer(app)
