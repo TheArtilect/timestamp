@@ -35,7 +35,7 @@ function checkInput(input){
 
   function convertToUnix(string){
     var date = new Date(string)
-    return date.getTime()
+    return date.getTime() / 1000
   }
   
   
@@ -47,11 +47,12 @@ function checkInput(input){
     unixDate = input
   } else {
     var date = new Date(input)
-    if (date != 'Invalid Date'){ // input is valid string
+    if (date == 'Invalid Date'){ // input is invalid
+      unixDate = null
+      naturalDate = null
+    } else { //  input is a valid string
       unixDate = convertToUnix(input)
       naturalDate = dateIt(date)
-    } else { //  input is invalid string
-      return ({ unix: null, natural: null })
     }
   }
    return ({unix: unixDate, natural: naturalDate})
@@ -64,4 +65,5 @@ function checkInput(input){
 exports.getTime = function(req, res){
   var userInput = req.params.input
   res.json(checkInput(userInput))
+  
 }
