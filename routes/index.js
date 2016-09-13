@@ -18,7 +18,7 @@ exports.index = function(req, res){
 
 function checkInput(input){
   var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
-  var days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Saturday"]
+  var days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
   
   function dateIt(date){
     var year = date.getFullYear()
