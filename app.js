@@ -5,7 +5,6 @@
 
 var express = require('express')
   , routes = require('./routes')
-  , user = require('./routes/user')
   , http = require('http')
   , path = require('path');
 
@@ -36,7 +35,6 @@ app.get('/:input', routes.getTime )
 
 
 
-app.get('/users', user.list);
 
 var server = http.createServer(app)
 
