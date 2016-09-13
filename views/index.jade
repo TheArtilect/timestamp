@@ -5,12 +5,11 @@ block content
   h4 by #{author}
   p Welcome to #{title}
   
-  h3 Examples:
-  code(id="example-natural", class="example") localhost:8080/December 15, 2015
+  h3 Example Input:
+  code(id="example-natural", class="example") https://timestamp-microservice-ia.herokuapp.com//October 12, 2011
   p Or
-  code(id="example-unix", class="example") localhost:8080/1450137600
+  code(id="example-unix", class="example") https://timestamp-microservice-ia.herokuapp.com//1318377600
   
   h3 Example Output:
-  code(id="example-output" class="example") { "unix": 1450137600, "natural": "December 15, 2015" }
+  code(id="example-output" class="example") { "unix": 1318377600, "natural": "October 12, 2011", "dayOfTheWeek": "Wednesday"}
   
-  p= input

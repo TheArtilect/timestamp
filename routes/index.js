@@ -18,12 +18,14 @@ exports.index = function(req, res){
 
 function checkInput(input){
   var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
+  var days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Saturday"]
   
-    function dateIt(date){
+  function dateIt(date){
     var year = date.getFullYear()
     var month = months[date.getMonth()] 
     var day = date.getDate()
-    return month + " " + day + ", " + year
+    var namedDate = days[date.getDay()]
+    return [(month + " " + day + ", " + year), namedDate] 
   }
   
   
@@ -40,22 +42,30 @@ function checkInput(input){
   
   
   
+  
   var naturalDate;
   var unixDate;
+  var day;
   if (!isNaN(input)){ // input is unix
-    naturalDate = convertToNatural(input)
+    arr = convertToNatural(input)
+    naturalDate = arr[0]
+    day = arr[1]
     unixDate = input
   } else {
     var date = new Date(input)
     if (date == 'Invalid Date'){ // input is invalid
       unixDate = null
       naturalDate = null
+      day = null
     } else { //  input is a valid string
       unixDate = convertToUnix(input)
-      naturalDate = dateIt(date)
+      arr = dateIt(date)
+      naturalDate = arr[0]
+      day = arr[1]
+      
     }
   }
-   return ({unix: unixDate, natural: naturalDate})
+   return ({unix: unixDate, natural: naturalDate, dayOfTheWeek: day})
 }
 
 
