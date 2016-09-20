@@ -2,8 +2,9 @@ extends layout
 
 block content
   h1= title
-  h4 by #{author}
-  p Welcome to #{title}
+  h3 by #{author}
+  h5 Welcome to #{title}
+  p This is a timestamp microservice.  You can pass a string as a parameter, and it will check to see whether the string contains a unix or natural language date.  If it does, a JSON of both the unix and natural language date will be returned, as well as the day of the week for that date.  If the string is not a valid date, a JSON with values will be returned.
   
   h3 Example Input:
   code(id="example-natural", class="example") https://timestamp-microservice-ia.herokuapp.com/October 12, 2011
