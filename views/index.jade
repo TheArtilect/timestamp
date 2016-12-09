@@ -4,13 +4,12 @@ block content
   h1= title
   h3 by #{author}
   h5 Welcome to #{title}
-  p This is a timestamp microservice.  You can pass a string as a parameter, and it will check to see whether the string contains a unix or natural language date.  If it does, a JSON of both the unix and natural language date will be returned, as well as the day of the week for that date.  If the string is not a valid date, a JSON with values will be returned.
-  
+  p This is a timestamp microservice.  You can pass a string as a parameter, and it will check to see whether the string contains a date in either unix or natural language.  If it does, a JSON of both the unix and natural language date will be returned, as well as the day of the week for that date.  If the string is not a valid date, a JSON with null values will be returned.
+
   h3 Example Input:
   code(id="example-natural", class="example") https://timestamp-microservice-ia.herokuapp.com/October 12, 2011
   p Or
   code(id="example-unix", class="example") https://timestamp-microservice-ia.herokuapp.com/1318377600
-  
+
   h3 Example Output:
   code(id="example-output" class="example") { "unix": 1318377600, "natural": "October 12, 2011", "dayOfTheWeek": "Wednesday"}
-  
